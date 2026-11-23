@@ -1,0 +1,21 @@
+[package]
+name = "paralleldl"
+version = "0.1.0"
+edition = "2021"
+description = "Rootless Linux multi-interface parallel HTTP file downloader with Ratatui TUI"
+
+[[bin]]
+name = "pldl"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+chrono = { version = "0.4", features = ["serde"] }
+clap = { version = "4", features = ["derive"] }
+crossterm = "0.28"
+futures-util = "0.3"
+ratatui = "0.29"
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "stream"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
